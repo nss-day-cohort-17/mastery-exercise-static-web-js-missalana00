@@ -39,7 +39,8 @@ Here's what the pine tree should look like when you specify a height of 7, and u
 */
 
 
-// Pre-Step 1: Write the HTML that creates the two text fields for
+// Pre-Step 1:
+// Write the HTML that creates the two text fields for
 // the user to enter the height and character of their tree.
 // Additionally, create a button for the user to click that says, "Grow your tree."
 
@@ -56,7 +57,7 @@ var growButton = document.getElementById("grow");
 
 var PlaceholderObj;
 
-// Step 3: Create an object constructor
+// Step 3: Create an object constructor.
 // Best reference at https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#Using_a_constructor_function)
 // Remember to use a capital initial letter here
 
@@ -102,5 +103,8 @@ createTree(TreeObject);
 }
 
 // Step 5: Add Event Listeners
+// Best reference at https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+
+userInputHeight.addEventListener("keydown", )
 
 // Step 6: Write createTree function that specifies how to create the console tree
