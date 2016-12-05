@@ -48,6 +48,15 @@ Here's what the pine tree should look like when you specify a height of 7, and u
 // Step 1: You need variables that reference the height, character, and button elements in the DOM
 
 
+
 var heightInput = getElementById("height");
 var charInput = getElementById("char");
 var growButton = getElementById("grow");
+
+
+// Step 2: You need a variable that will serve as a placeholder for
+// the information the user will enter into the two fields
+
+var placeholderObj;
+
+// Step 3:
