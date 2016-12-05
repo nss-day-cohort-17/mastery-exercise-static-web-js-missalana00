@@ -20,7 +20,6 @@ the tree should be shown in the console.
 This requires you to ADD AN EVENT LISTENER TO THE BUTTON,
 as well as ADD AN EVENT LISTENER FOR THE ENTER/RETURN KEY.
 
-
 If either of the input fields does not have a value in it when the user presses the enter key, or presses
 the button, then display an alert stating that both fields must have a value (VALIDATE INFORMATION).
 
@@ -40,16 +39,16 @@ Here's what the pine tree should look like when you specify a height of 7, and u
 */
 
 
-// Pre-Step 1: Write the HTML that creates the two text feilds for
+// Pre-Step 1: Write the HTML that creates the two text fields for
 // the user to enter the height and character of their tree.
 // Additionally, create a button for the user to click that says, "Grow your tree."
 
 
 // Step 1: You need variables that reference the height, character, and button elements in the DOM
 
-var heightInput = getElementById("height");
-var charInput = getElementById("char");
-var growButton = getElementById("grow");
+var userInputHeight = document.getElementById("height");
+var userInputChar = document.getElementById("char");
+var growButton = document.getElementById("grow");
 
 
 // Step 2: You need a variable that will serve as a placeholder for
@@ -57,18 +56,51 @@ var growButton = getElementById("grow");
 
 var PlaceholderObj;
 
-// Step 3: Create an onject constructor
+// Step 3: Create an object constructor
 // Best reference at https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#Using_a_constructor_function)
 // Remember to use a capital initial letter here
 
 // Using a constructor function
-
-// Alternatively, you can create an object with these two steps:
+// You can create an object with these two steps:
 
 // Define the object type by writing a constructor function.
 // To define an object type, create a function for the object type that specifies its name, properties, and methods.
 
-function growTheTree (height, char) {
+function TreeObject (height, char) {
     this.height = height;
     this.char = char;
 }
+
+// Notice the use of "this" to assign values to the object's properties based on the values passed to the function.
+
+// Step 4: Form Validation - Specify the circumstances (using if statements) under which an alert
+// will pop up if the user correctly enters
+// information into the two fields (and indicate what code will run) and if they do not complete both fields
+
+
+function growTree () {
+    if (userInputHeight.value && userInputChar.value) {
+        alert("You've successfully created your tree!")
+
+// Now, you need to create a new object which holds the specific inputs the user entered
+
+PlaceholderObj = new TreeObject(userInputHeight.value, userInputChar.value);
+
+// Next, you need to call the function that will run if the user correctly enters information and pass it
+// the newly created "TreeObject" which contains the specific user inputs for height and character.
+
+// For now, call that function createTree:
+
+createTree(TreeObject);
+
+// Indicate what will happen if the user does not complete both fields using an else statement
+
+} else {
+    alert("You must enter a value in both fields");
+  }
+
+}
+
+// Step 5: Add Event Listeners
+
+// Step 6: Write createTree function that specifies how to create the console tree
