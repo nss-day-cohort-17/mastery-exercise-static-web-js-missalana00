@@ -45,4 +45,9 @@ Here's what the pine tree should look like when you specify a height of 7, and u
 // Additionally, create a button for the user to click that says, "Grow your tree."
 
 
-// Step 1: You need variables that reference elements in the DOM
+// Step 1: You need variables that reference the height, character, and button elements in the DOM
+
+
+var heightInput = getElementById("height");
+var charInput = getElementById("char");
+var growButton = getElementById("grow");
