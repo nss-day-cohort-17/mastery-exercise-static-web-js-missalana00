@@ -30,6 +30,7 @@ outputTree += object.char.repeat(i * 2 + 1)
   }
 }
 
+
 growButton.addEventListener("click", getTreeInfo)
 
 userInputHeight.addEventListener("keypress", function(e) {
