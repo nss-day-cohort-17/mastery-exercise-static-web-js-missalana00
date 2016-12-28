@@ -117,22 +117,22 @@ createTree(TreeObject);
 // userInputChar.addEventListener("keydown", growTree)
 
 // //
-r
+
 
 growButton.addEventListener("click", growTree)
 
 
-Step 6: Write createTree function that specifies how to create the console tree
+// Step 6: Write createTree function that specifies how to create the console tree
 
-123456*
-12345***
-1234*****
-123*******
-12*********
-1***********
-0************
+// 123456*
+// 12345***
+// 1234*****
+// 123*******
+// 12*********
+// 1***********
+// 0************
 
-createTree
+// createTree
 
-For every character you add in height, the number of spaces before it decreases by 1
-# of stars increases as number of spaces decreases
+// For every character you add in height, the number of spaces before it decreases by 1
+// # of stars increases as number of spaces decreases
