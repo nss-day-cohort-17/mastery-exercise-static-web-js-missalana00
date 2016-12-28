@@ -53,11 +53,14 @@ var growButton = document.getElementById("grow");
 
 
 // Step 2: You need a variable that will serve as a placeholder for
-// the information the user will enter into the two fields
+// the information the user will enter into the two fields because later, you will set the placeholder equal to a
+// new object that will specify the exact values the user inputed into the fields.
 
 var PlaceholderObj;
 
-// Step 3: Create an object constructor.
+// Step 3: Following Scott's instruction to use an object literal
+
+// Create an object constructor.
 // Best reference at https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#Using_a_constructor_function)
 // Remember to use a capital initial letter here
 
@@ -68,8 +71,12 @@ var PlaceholderObj;
 // To define an object type, create a function for the object type that specifies its name, properties, and methods.
 
 function TreeObject (height, char) {
-    this.height = height;
-    this.char = char;
+    // this.height = height;
+    // this.char = char;
+    // Scott using an object literal rather than an object constructor
+    console.log(height, char)
+    return { height: height, char: char }
+
 }
 
 // Notice the use of "this" to assign values to the object's properties based on the values passed to the function.
@@ -81,16 +88,13 @@ function TreeObject (height, char) {
 
 function growTree () {
     if (userInputHeight.value && userInputChar.value) {
-        alert("You've successfully created your tree!")
+      alert("You've successfully created your tree!")
 
-// Now, you need to create a new object which holds the specific inputs the user entered
 
-PlaceholderObj = new TreeObject(userInputHeight.value, userInputChar.value);
+PlaceholderObj = TreeObject(userInputHeight.value, userInputChar.value);
 
-// Next, you need to call the function that will run if the user correctly enters information and pass it
-// the newly created "TreeObject" which contains the specific user inputs for height and character.
 
-// For now, call that function createTree:
+
 
 createTree(TreeObject);
 
@@ -105,6 +109,30 @@ createTree(TreeObject);
 // Step 5: Add Event Listeners
 // Best reference at https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
 
-userInputHeight.addEventListener("keydown", )
 
-// Step 6: Write createTree function that specifies how to create the console tree
+// // event listener for height input:
+// userInputHeight.addEventListener("keydown", growTree)
+
+// //event listener for character input:
+// userInputChar.addEventListener("keydown", growTree)
+
+// //
+r
+
+growButton.addEventListener("click", growTree)
+
+
+Step 6: Write createTree function that specifies how to create the console tree
+
+123456*
+12345***
+1234*****
+123*******
+12*********
+1***********
+0************
+
+createTree
+
+For every character you add in height, the number of spaces before it decreases by 1
+# of stars increases as number of spaces decreases
